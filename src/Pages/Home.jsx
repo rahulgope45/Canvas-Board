@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Canvas ,Rect } from 'fabric';
 import { IconButton } from 'blocksin-system';
-import { SquareIcon } from 'sebikostudio-icons';
+import { CircleIcon, SquareIcon } from 'sebikostudio-icons';
 
 function Home() {
 
@@ -67,6 +67,13 @@ function Home() {
                     
                 >
                     <SquareIcon />
+                </IconButton>
+                <IconButton
+                    onClick={addRectangle}
+                    className="text-gray-700 hover:text-black-600 focus:outline-none"
+                    
+                >
+                    <CircleIcon />
                 </IconButton>
             </div>
 
