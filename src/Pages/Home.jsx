@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 import React, { useEffect, useRef, useState } from 'react'
-import { Canvas } from 'fabric';
+import { Canvas ,Rect } from 'fabric';
 import { IconButton } from 'blocksin-system';
 import { SquareIcon } from 'sebikostudio-icons';
 
@@ -32,6 +32,22 @@ function Home() {
     }, []);
 
     const addRectangle = () => {
+        if(canvas){
+            const rect = new Rect({
+                top: 100,
+                left:50,
+                width:100,
+                height:60,
+                  fill: "#6B7280",
+                  selectable: true,
+                  scaleX: true,
+                  scaleY: true,
+    
+
+            })
+            canvas.add(rect);
+            canvas.renderAll(); 
+        }
 
     }
 
@@ -40,7 +56,7 @@ function Home() {
     return (
         <div className='flex  item-center justify-center mt-30'>
             <div >
-                <canvas style={{ backgroundColor: "#ffffff" }}
+                <canvas 
                     className="border-2 border-gray-300 p-4 rounded-md" ref={canvasRef} />
             </div>
 
