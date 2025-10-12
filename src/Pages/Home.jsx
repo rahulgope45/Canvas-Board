@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 import React, { useEffect, useRef, useState } from 'react'
-import { Canvas ,Rect } from 'fabric';
+import { Canvas ,Rect, Circle} from 'fabric';
 import { IconButton } from 'blocksin-system';
 import { CircleIcon, SquareIcon } from 'sebikostudio-icons';
 
@@ -51,6 +51,23 @@ function Home() {
 
     }
 
+    const addCircle = () => {
+    if (canvas) {
+        const circle = new Circle({
+            top: 100,
+            left: 50,
+            radius: 50,
+            fill: "#6B7280",
+            selectable: true,
+            scaleX: true,
+            scaleY: true,
+        });
+        canvas.add(circle);
+        canvas.renderAll();
+    }
+};
+
+
 
 
     return (
@@ -69,7 +86,7 @@ function Home() {
                     <SquareIcon />
                 </IconButton>
                 <IconButton
-                    onClick={addRectangle}
+                    onClick={addCircle}
                     className="text-gray-700 hover:text-black-600 focus:outline-none"
                     
                 >
