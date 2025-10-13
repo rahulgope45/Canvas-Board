@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Canvas ,Rect, Circle} from 'fabric';
 import { IconButton } from 'blocksin-system';
 import { CircleIcon, SquareIcon } from 'sebikostudio-icons';
+import Settings from '../components/Settings';
 
 function Home() {
 
