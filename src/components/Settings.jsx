@@ -67,6 +67,15 @@ function Settings({canvas}) {
   };
 
   const handleHeightChange=(e)=>{
+    const value = e.target.value.replace(/,/g,"");
+    const intValue = parseInt(value, 10);
+
+    setHeight(intValue);
+
+    if (selectedObject && selectedObject.type === "rect" &&  intValue >= 0){
+      selectedObject.set({ height: intValue / selectedObject.scaleY});
+      canvas.renderAll();
+    }
     
 
   };
@@ -79,13 +88,18 @@ function Settings({canvas}) {
       {selectedObject && selectedObject.type === 'rect' && (
         <>
         <Input
-        value={width}
-        onChange={handleWidthChange}
+        value={height}
+        onChange={handleHeightChange}
         
         />
         <Input
         value={width}
         onChange={handleWidthChange}
+        
+        />
+        <Input
+        value={color}
+        onChange={handleColorChange}
         
         />
         
