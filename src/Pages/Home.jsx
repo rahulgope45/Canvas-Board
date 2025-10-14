@@ -94,6 +94,11 @@ function Home() {
                     <CircleIcon />
                 </IconButton>
             </div>
+            <div>
+               
+                <Settings  canvas={canvas}/>
+
+            </div>
 
         </div>
     )
