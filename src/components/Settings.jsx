@@ -88,7 +88,7 @@ function Settings({canvas}) {
     
 
   };
-  const handleDiameterChange=()=>{
+  const handleDiameterChange=(e)=>{
     const value = e.target.value.replace(/,/g,"");
     const intValue = parseInt(value, 10);
 
@@ -110,6 +110,7 @@ function Settings({canvas}) {
   };
 
   return (
+    <>
     <div>
       {selectedObject && selectedObject.type === 'rect' && (
         <>
@@ -138,8 +139,36 @@ function Settings({canvas}) {
         </>
       )}
 
+      {/* For Circle */}
+       <div>
+      {selectedObject && selectedObject.type === 'circle' && (
+        <>
+        <Input
+        value={diameter}
+        onChange={handleDiameterChange}
+        label='Diameter'
+        
+        />
+        
+        <Input
+        type="color"
+        value={color}
+        onChange={handleColorChange}
+        label='Color'
+        
+        />
+        
+        
+        
+        </>
+      )}
+
 
     </div>
+
+
+    </div>
+    </>
   )
 }
 
