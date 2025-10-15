@@ -88,9 +88,26 @@ function Settings({canvas}) {
     
 
   };
-  const handleDiameterChange=()=>{};
+  const handleDiameterChange=()=>{
+    const value = e.target.value.replace(/,/g,"");
+    const intValue = parseInt(value, 10);
 
-  const handleColorChange=()=>{};
+    setDiameter(intValue);
+
+    if (selectedObject && selectedObject.type === 'circle' && intValue >=0){
+      selectedObject.set({ radius: intValue /2/ selectedObject.scaleX})
+      canvas.renderAll();
+    }
+  };
+
+  const handleColorChange=(e)=>{
+    const value = e.target.value;
+    setColor(value);
+    if(selectedObject){
+      selectedObject.set({ fill: value});
+      canvas.renderAll();
+    }
+  };
 
   return (
     <div>
@@ -109,6 +126,7 @@ function Settings({canvas}) {
         
         />
         <Input
+        type="color"
         value={color}
         onChange={handleColorChange}
         label='Color'
