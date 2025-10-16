@@ -111,7 +111,7 @@ function Settings({canvas}) {
 
   return (
     <>
-    <div>
+    <div className='bg-black'>
       {selectedObject && selectedObject.type === 'rect' && (
         <>
         <Input

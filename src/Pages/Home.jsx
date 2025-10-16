@@ -72,7 +72,7 @@ function Home() {
 
 
     return (
-        <div className='flex  item-center justify-center mt-30'>
+        <div className='flex  item-center justify-center mt-30 '>
             <div >
                 <canvas 
                     className="border-2 border-gray-300 p-4 rounded-md" ref={canvasRef} />
